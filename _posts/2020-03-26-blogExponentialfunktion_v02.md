@@ -29,6 +29,142 @@ $$N(t) = 37000 \cdot e^{(\frac{\ln 2}{ 5} \cdot t)}$$
 Rechnen wir für die ersten 20 Tage die Werte aus: 
 
 
+```python
+dfCut.head(20)
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>t</th>
+      <th>Nexp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>37000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>42501</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>48821</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>56081</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>64420</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>5</td>
+      <td>74000</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>6</td>
+      <td>85003</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>7</td>
+      <td>97643</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>8</td>
+      <td>112163</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>9</td>
+      <td>128841</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>10</td>
+      <td>148000</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>11</td>
+      <td>170007</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>12</td>
+      <td>195287</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>13</td>
+      <td>224326</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>14</td>
+      <td>257683</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>15</td>
+      <td>296000</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>16</td>
+      <td>340014</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>17</td>
+      <td>390574</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>18</td>
+      <td>448652</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>19</td>
+      <td>515366</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
 Ganz links in der Tabelle ist ein Zeilen-Zähler abgebildet (der ist bei der Tabellenfunktion, die ich verwende, automatisch dabei). In der Spalte mit der Überschrift t sind die Zeiten angegeben (in Tagen), also die erste Zeile steht für heute, die zweite für morgen usw. In der Spalte Nexp (exp, weil wir hier die unveränderte Exponentialfunktion verwendet haben) sind die Fallzahlen eingetragen. Heute steht dort 37000, so wie es sein sollte.
 
 Man sieht, dass sich die Fallzahlen nach 5 Tagen auf 74000 verdoppelt haben und nach weiteren 5 Tagen auf 148000. Das stimmt also damit überein, dass wir die Verdopplungszeit von 5 Tagen in die Formel eingesetzt haben.
@@ -36,6 +172,14 @@ Man sieht, dass sich die Fallzahlen nach 5 Tagen auf 74000 verdoppelt haben und 
 Eine Fallzahl von 370000, das ist das zehnfache des Startwerts, liegt zwischen den Zeilen 16 und 17. Eine Verdopplungszeit von 5 Tagen führt also zu einer Verzehnfachung der Fallzahlen in knapp zweieinhalb Wochen. In den nächsten zweieinhalb Wochen sind es dann 3,7 Mio Infizierte usw. Eine längere Tabelle mit weiteren Werten gibt es ganz unten.
 
 Zunächst einmal folgt hier eine graphische Darstellung. Unten von links nach rechts ist die Zeit in Tagen ab heute aufgetragen und nach oben die Fallzahlen:
+
+
+
+
+
+
+![png](/images/blogExponentialfunktion_v02_files/output_3_0.png)
+
 
 
 Man erkennt das erst langsame und dann explosionsartige Anwachsen der Exponentialfunktion. Bis zu 10 Mio. Infizierten dauert es ca. 40 Tage. 5 Tage später sind es dann 20 Mio. Infizierte.
