@@ -29,9 +29,6 @@ $$N(t) = 37000 \cdot e^{(\frac{\ln 2}{ 5} \cdot t)}$$
 Rechnen wir für die ersten 20 Tage die Werte aus: 
 
 
-```python
-dfCut.head(20)
-```
 
 
 
@@ -188,6 +185,15 @@ Es ist aber auch zu erkennen, dass die Exponentialfunktion das Geschehen nicht k
 
 Diese beiden Effekte führen dazu, das die Kurve mit wachsenden Fallzahlen immer mehr unterhalb der reinen Exponentialfunktion bleibt. Die mit dem verbesserten Model berechneten Fallzahlen sind mit Nmodel bezeichnet:
 
+
+
+
+
+
+![png](/images/blogExponentialfunktion_v02_files/output_5_0.png)
+
+
+
 Man erkennt, dass die Exponentialfunktion bis Tag 30 die Entwicklung noch ganz gut beschreibt, sich danach aber immer mehr von dem realistischeren Model entfernt. 
 
 Da in dieses Modell aber Annahmen eingehen, die auch nur geschätzt sind, ist auch dieser Verlauf nur eine Ännäherung an die Realität. Aber man sieht, dass die Kurve in eine Sättigung läuft, was im Gegensatz zur Exponentialfunktion schon deutlich besser ist. Bei wieviel Millionen diese Sättigung liegt, hängt sehr stark davon ab, welche Zeit annimmt, in der eine Person infektiös ist. Und in welchem Verhältnis diese Zeit zur Verdopplungszeit steht.
@@ -196,3 +202,458 @@ Aufgrund der Unkenntnis wichtiger Einflussgrößen läßt sich naturgemäß kein
 Für die Berechnung benötigt man neben dem Startwert, der einfach die Fallzahl heute ist, nur die Verdopplungszeit. Wie man die berechnet, kommt im nächsten Beitrag.
 
 Hier nun die Tabelle mit den Werten für die 60 Tage:
+
+
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>t</th>
+      <th>Nexp</th>
+      <th>Nmodel</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>37000</td>
+      <td>37000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>42501</td>
+      <td>41960</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>48821</td>
+      <td>47554</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>56081</td>
+      <td>53868</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>64420</td>
+      <td>60998</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>5</td>
+      <td>74000</td>
+      <td>69050</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>6</td>
+      <td>85003</td>
+      <td>78146</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>7</td>
+      <td>97643</td>
+      <td>88418</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>8</td>
+      <td>112163</td>
+      <td>100018</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>9</td>
+      <td>128841</td>
+      <td>113115</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>10</td>
+      <td>148000</td>
+      <td>127899</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>11</td>
+      <td>170007</td>
+      <td>144586</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>12</td>
+      <td>195287</td>
+      <td>163419</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>13</td>
+      <td>224326</td>
+      <td>184669</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>14</td>
+      <td>257683</td>
+      <td>208646</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>15</td>
+      <td>296000</td>
+      <td>235697</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>16</td>
+      <td>340014</td>
+      <td>266211</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>17</td>
+      <td>390574</td>
+      <td>300631</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>18</td>
+      <td>448652</td>
+      <td>339450</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>19</td>
+      <td>515366</td>
+      <td>383227</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>20</td>
+      <td>592000</td>
+      <td>432585</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>21</td>
+      <td>680029</td>
+      <td>488228</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>22</td>
+      <td>781149</td>
+      <td>550942</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>23</td>
+      <td>897304</td>
+      <td>621609</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>24</td>
+      <td>1030732</td>
+      <td>701215</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>25</td>
+      <td>1184000</td>
+      <td>790865</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>26</td>
+      <td>1360059</td>
+      <td>891790</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>27</td>
+      <td>1562298</td>
+      <td>1005364</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>28</td>
+      <td>1794609</td>
+      <td>1133116</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>29</td>
+      <td>2061464</td>
+      <td>1276746</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>30</td>
+      <td>2368001</td>
+      <td>1438137</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>31</td>
+      <td>2720118</td>
+      <td>1619373</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>32</td>
+      <td>3124596</td>
+      <td>1822750</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>33</td>
+      <td>3589218</td>
+      <td>2050793</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>34</td>
+      <td>4122929</td>
+      <td>2306266</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>35</td>
+      <td>4736002</td>
+      <td>2592183</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>36</td>
+      <td>5440237</td>
+      <td>2911813</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>37</td>
+      <td>6249192</td>
+      <td>3268679</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>38</td>
+      <td>7178436</td>
+      <td>3666557</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>39</td>
+      <td>8245858</td>
+      <td>4109453</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>40</td>
+      <td>9472004</td>
+      <td>4601586</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>41</td>
+      <td>10880475</td>
+      <td>5147339</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>42</td>
+      <td>12498384</td>
+      <td>5751207</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>43</td>
+      <td>14356873</td>
+      <td>6417715</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>44</td>
+      <td>16491717</td>
+      <td>7151317</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>45</td>
+      <td>18944008</td>
+      <td>7956270</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>46</td>
+      <td>21760951</td>
+      <td>8836469</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>47</td>
+      <td>24996768</td>
+      <td>9795265</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>48</td>
+      <td>28713747</td>
+      <td>10835239</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>49</td>
+      <td>32983434</td>
+      <td>11957955</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>50</td>
+      <td>37888016</td>
+      <td>13163689</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>51</td>
+      <td>43521902</td>
+      <td>14451132</td>
+    </tr>
+    <tr>
+      <th>52</th>
+      <td>52</td>
+      <td>49993537</td>
+      <td>15817108</td>
+    </tr>
+    <tr>
+      <th>53</th>
+      <td>53</td>
+      <td>57427494</td>
+      <td>17256285</td>
+    </tr>
+    <tr>
+      <th>54</th>
+      <td>54</td>
+      <td>65966868</td>
+      <td>18760935</td>
+    </tr>
+    <tr>
+      <th>55</th>
+      <td>55</td>
+      <td>75776032</td>
+      <td>20320746</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>56</td>
+      <td>87043804</td>
+      <td>21922708</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>57</td>
+      <td>99987074</td>
+      <td>23551120</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>58</td>
+      <td>114854988</td>
+      <td>25187710</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>59</td>
+      <td>131933736</td>
+      <td>26811904</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>60</td>
+      <td>151552065</td>
+      <td>28401234</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>61</td>
+      <td>174087608</td>
+      <td>29931887</td>
+    </tr>
+    <tr>
+      <th>62</th>
+      <td>62</td>
+      <td>199974149</td>
+      <td>31379369</td>
+    </tr>
+    <tr>
+      <th>63</th>
+      <td>63</td>
+      <td>229709976</td>
+      <td>32719251</td>
+    </tr>
+    <tr>
+      <th>64</th>
+      <td>64</td>
+      <td>263867472</td>
+      <td>33927967</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>65</td>
+      <td>303104131</td>
+      <td>34983601</td>
+    </tr>
+    <tr>
+      <th>66</th>
+      <td>66</td>
+      <td>348175216</td>
+      <td>35866631</td>
+    </tr>
+    <tr>
+      <th>67</th>
+      <td>67</td>
+      <td>399948298</td>
+      <td>36560582</td>
+    </tr>
+    <tr>
+      <th>68</th>
+      <td>68</td>
+      <td>459419952</td>
+      <td>37052558</td>
+    </tr>
+    <tr>
+      <th>69</th>
+      <td>69</td>
+      <td>527734944</td>
+      <td>37333627</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
