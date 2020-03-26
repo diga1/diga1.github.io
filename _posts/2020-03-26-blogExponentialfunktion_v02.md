@@ -1,7 +1,3 @@
-# Title
-> summary
-
-
 # Corona-Fallzahlen und die Exponentialfunktion
 
 Für die Beantwortung der Frage, wie sich die Corona-Fallzahlen weiter entwickeln werden, gehen wir im ersten Schritt davon, dass es sich um exponentielles Wachstum handelt. Das ist sicherlich nicht ganz richtig, aber diese Annahme ist gut genug, um sich einen ersten Überblick zu verschaffen. Weiter unten gibt es Zahlen, die ich mit einem realistischeren Modell berechnet habe.
