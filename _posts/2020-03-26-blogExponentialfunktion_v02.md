@@ -39,9 +39,11 @@ $$N_0 \cdot e^{\alpha \cdot \tau} = 2 \cdot N_0$$
 
 $N_0$ fällt weg. Dann wendet man auf beide Seiten den natürlichen Logarithmus an. Da er die Umkehrfunktion zur Exponentialfunktion ist, gilt für jede Zahl x, $ln(e^x) = x$, also:
 
-$$ \ln(e^{\alpha \cdot \tau}) = \ln 2 $$  
-$$ \alpha \cdot \tau = \ln 2$$  
-$$ \alpha = \frac{\ln 2}{ \tau}$$  
+$$ \ln(e^{\alpha \cdot \tau}) = \ln 2 $$
+
+$$ \alpha \cdot \tau = \ln 2$$
+
+$$ \alpha = \frac{\ln 2}{ \tau}$$
 
 *Beweis Ende*
 
