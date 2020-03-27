@@ -1,32 +1,58 @@
+
 # Corona-Fallzahlen und die Exponentialfunktion
 
-Für die Beantwortung der Frage, wie sich die Corona-Fallzahlen weiter entwickeln werden, gehen wir im ersten Schritt davon, dass es sich um exponentielles Wachstum handelt. Das ist sicherlich nicht ganz richtig, aber diese Annahme ist gut genug, um sich einen ersten Überblick zu verschaffen. Weiter unten gibt es Zahlen, die ich mit einem realistischeren Modell berechnet habe.
+Für die Beantwortung der Frage, wie sich die Corona-Fallzahlen weiter entwickeln werden, gehen wir im ersten Schritt davon aus, dass es sich um exponentielles Wachstum handelt. Das ist sicherlich nicht ganz richtig, aber diese Annahme ist gut genug, um sich einen ersten Überblick zu verschaffen. Weiter unten gibt es Zahlen, die ich mit einem realistischeren Modell berechnet habe.
 
 Nochmals: Die Formeln, die jetzt kommen, sind für die daran Interessierten. Man kann sie aber auch einfach überspringen.
 
-Die Exponentialfunktion beschreibt also die Zahl der Infizierten für jeden Zeitpunkt. Eine bekannte Form, die Exponentialfunktion zu schreiben, verwendet die nätürliche Zahl $e$ und lautet:
+Die Exponentialfunktion beschreibt also die Zahl der Infizierten für jeden Zeitpunkt. Eine bekannte Form, die Exponentialfunktion zu schreiben lautet:
 
 $$N(t) = N_0 \cdot e^{\alpha \cdot t}$$
 
-Der Buchstabe $t$ (engl: time) ist die Zeit, die wir einsetzten werden. Beispielsweise könnten wir $t = 5$ einsetzen, um die Fallzahl in 5 Tagen auszurechnen. Dann gibt es noch $N_0$ und $\alpha$ (sprich: alpha). Diese Werte bestimmen die genaue Form der speziellen Exponentialfunktion, die uns den Verlauf der Fallzahlen ab heute anzeigen soll. 
+Dabei ist $e$ die Eulersche Zahl. Der Buchstabe $t$ (engl: time) ist die Zeit in Tagen, die wir einsetzen werden. Beispielsweise könnten wir $t = 5$ einsetzen, um die Fallzahl in 5 Tagen auszurechnen. Dann gibt es noch $N_0$ und $\alpha$ (sprich: alpha). Diese Werte bestimmen die genaue Form der speziellen Exponentialfunktion, die uns den Verlauf der Fallzahlen ab heute anzeigen soll. 
 
-$N_0$ ist der Startwert, also die Fallzahl von heute (heute ist $t = 0$). Wir wählen $N_0 = 37000$, weil das ungfähr die Fallzahl ist, die die John Hopkins University für den 25.03.2020 für Deutschland angibt.
+$N_0$ ist der Startwert, also die Fallzahl von heute (heute ist $t = 0$). Wir wählen $N_0 = 37000$, weil das ungefähr die Fallzahl ist, die die John Hopkins University für den 25.03.2020 für Deutschland angibt.
 
 
 
-In den Medien fällt immer wieder der Begriff der Verdopplungs-Zeit. Das ist der Zeitraum, in dem sich die Anzahl der Infizierten verdoppelt. Nennen wir sie $\tau$ (sprich: tau). Die Verdopplungszeit $\tau$ legt fest, was wir für $\alpha$ wählen müssen, um die für unsern Fall korrekte Exponentialfunktion zu erhlaten. Der Zusammenhang ist:
+In den Medien fällt immer wieder der Begriff der Verdopplungs-Zeit. Das ist der Zeitraum, in dem sich die Anzahl der Infizierten verdoppelt. Nennen wir sie $\tau$ (sprich: tau). Die Verdopplungszeit $\tau$ legt fest, was wir für $\alpha$ wählen müssen, um die für unseren Fall korrekte Exponentialfunktion zu erhalten. Der Zusammenhang ist:
 
 $$ \alpha = \frac{\ln 2}{ \tau}$$
 
 Dabei ist $\ln$ der natürliche Logarithmus, und $\ln 2$ ist ungefähr gleich 0,6931.
 
-Dann benötigen wir noch eine Zahl für die Verdopplungs-Zeit $\tau$. Sie lag in Deutschland den letzten 5 Tagen so um die 5.  Für die folgenden Berechnungen nehmen wir die Zahl 5 als Verdopplungszeit. Wie man die Verdopplungszeit bestimmt, kommt im nächsten Beitrag.
+Den Zusammenhang zwischen $\alpha$ und $\tau$ erhält man wie folgt.
+
+*Beweis Anfang*
+
+Gesucht wird die Zeit $\tau$, die die Ausgangsfallzahl verdoppelt, also muss gelten:
+
+$$N(\tau) = 2 \cdot N_0 $$
+ 
+Setzt man andererseits $\tau$ in die Exponentialfunktion ein, ergibt sich:
+
+$$N(\tau) = N_0 \cdot e^{\alpha \cdot \tau}$$
+
+wenn man beide Gleichungen zusammen nimmt, erhält man:
+
+$$N_0 \cdot e^{\alpha \cdot \tau} = 2 \cdot N_0$$
+
+$N_0$ fällt weg. Dann wendet man auf beide Seiten den natürlichen Logarithmus an. Da er die Umkehrfunktion zur Exponentialfunktion ist, gilt für jede Zahl x, $ln(e^x) = x$, also:
+
+$$ \ln(e^{\alpha \cdot \tau}) = \ln 2 $$
+$$ \alpha \cdot \tau = \ln 2$$
+$$ \alpha = \frac{\ln 2}{ \tau}$$
+*Beweis Ende*
+
+
+Dann benötigen wir noch eine Zahl für die Verdopplungs-Zeit $\tau$. Sie lag in Deutschland den letzten 5 Tagen etwas über 5.  Für die folgenden Berechnungen nehmen wir die Zahl 5 als Verdopplungszeit. Wie man die Verdopplungszeit bestimmt, kommt im nächsten Beitrag.
 
 Damit haben wir alles zusammen, um die Exponentialfunktion ausrechnen zu können. $N_0 = 37000$ und $ \alpha = \frac{\ln 2}{ 5}$, also:
 
 $$N(t) = 37000 \cdot e^{(\frac{\ln 2}{ 5} \cdot t)}$$
 
 Rechnen wir für die ersten 20 Tage die Werte aus: 
+
 
 
 
@@ -174,16 +200,15 @@ Zunächst einmal folgt hier eine graphische Darstellung. Unten von links nach re
 
 
 
-
 ![png](/images/blogExponentialfunktion_v02_files/output_3_0.png)
 
 
 
 Man erkennt das erst langsame und dann explosionsartige Anwachsen der Exponentialfunktion. Bis zu 10 Mio. Infizierten dauert es ca. 40 Tage. 5 Tage später sind es dann 20 Mio. Infizierte.
 
-Es ist aber auch zu erkennen, dass die Exponentialfunktion das Geschehen nicht korrekt beschreibt. Nach 57 Tagen gäbe es laut Graphik über 100 Mio. Infizierte. Das kann natürlich bei einer Bevölkerungszahl von 83 Mio. gar nicht sein. Deshalb gibt es weiter unten eine Graphik und eine Tabelle, die mit einem verbesserten Modell berechnet wurde. Dieses verbesserte Modell berücksichtigt zwei Effekte. Erstens, gibt es immer weniger Gesunde, die das Virus infizieren kann. Zweitens endet für jede Person, die Zeit, in der sie andere infizieren kann. Entweder weil sie wieder gesund geworden oder verstorben ist.
+Es ist aber auch zu erkennen, dass die Exponentialfunktion das Geschehen nicht korrekt beschreibt. Nach 57 Tagen gäbe es laut Graphik über 100 Mio. Infizierte. Das kann natürlich bei einer Bevölkerungszahl von 83 Mio. gar nicht sein. Deshalb gibt es weiter unten eine Graphik und eine Tabelle, die mit einem verbesserten Modell berechnet wurde. Dieses verbesserte Modell berücksichtigt zwei Effekte. Erstens gibt es immer weniger Personen ohne Immunisierung, die das Virus infizieren kann. Zweitens endet für jede Person die Zeit, in der sie andere noch infizieren kann. Entweder weil sie wieder gesund geworden oder verstorben ist.
 
-Diese beiden Effekte führen dazu, das die Kurve mit wachsenden Fallzahlen immer mehr unterhalb der reinen Exponentialfunktion bleibt. Die mit dem verbesserten Model berechneten Fallzahlen sind mit Nmodel bezeichnet:
+Diese beiden Effekte führen dazu, dass die Kurve mit wachsenden Fallzahlen immer mehr unterhalb der reinen Exponentialfunktion bleibt. Die mit dem verbesserten Model berechneten Fallzahlen sind mit Nmodel bezeichnet:
 
 
 
@@ -194,15 +219,13 @@ Diese beiden Effekte führen dazu, das die Kurve mit wachsenden Fallzahlen immer
 
 
 
-Man erkennt, dass die Exponentialfunktion bis Tag 30 die Entwicklung noch ganz gut beschreibt, sich danach aber immer mehr von dem realistischeren Model entfernt. 
+Die Zeit $t = 0$ ist wieder heute. Man erkennt, dass die Exponentialfunktion bis Tag 30 die Entwicklung noch ganz gut beschreibt, sich danach aber immer mehr von dem realistischeren Model entfernt. 
 
-Da in dieses Modell aber Annahmen eingehen, die auch nur geschätzt sind, ist auch dieser Verlauf nur eine Ännäherung an die Realität. Aber man sieht, dass die Kurve in eine Sättigung läuft, was im Gegensatz zur Exponentialfunktion schon deutlich besser ist. Bei wieviel Millionen diese Sättigung liegt, hängt sehr stark davon ab, welche Zeit annimmt, in der eine Person infektiös ist. Und in welchem Verhältnis diese Zeit zur Verdopplungszeit steht.
+Da in dieses Modell aber Annahmen eingehen, die auch nur geschätzt sind, ist auch dieser Verlauf nur eine Annäherung an die Realität. Aber man sieht, dass die Kurve in eine Sättigung läuft, was im Gegensatz zur Exponentialfunktion schon deutlich besser ist. Bei wieviel Millionen diese Sättigung liegt, hängt sehr stark davon ab, welche Zeit man annimmt, in der eine Person infektiös ist. Ich habe hier 17 Tage gewählt. Das steht für 3 Tage Inkubationszeit plus 14 Tage Krankheitsepisode. Vermutlich gibt es gerade bei den Personen im Krankenhaus deutlich längere Krankheitsepisoden, andererseits sind diese Patienten wohl auch besser isoliert. 
 
-Aufgrund der Unkenntnis wichtiger Einflussgrößen läßt sich naturgemäß keine genaue Vorausberechnung anstellen. Aber für die Anfangsphase der Corona-Pandemie, in der wir uns noch befinden, ist die Exponentialfunktion eine gute Näherung. 
-Für die Berechnung benötigt man neben dem Startwert, der einfach die Fallzahl heute ist, nur die Verdopplungszeit. Wie man die berechnet, kommt im nächsten Beitrag.
+Aufgrund der Unkenntnis wichtiger Einflussgrößen lässt sich naturgemäß keine genaue Vorausberechnung anstellen. Aber für die Anfangsphase der Corona-Pandemie, in der wir uns noch befinden, ist die Exponentialfunktion eine gute Annäherung. Für die Berechnung benötigt man neben dem Startwert, der einfach die Fallzahl heute ist, nur die Verdopplungszeit. Wie man die berechnet, kommt im nächsten Beitrag.
 
-Hier nun die Tabelle mit den Werten für die 60 Tage:
-
+Hier nun die Tabelle mit den Zahlen für 70 Tage. Die Spalte Nexp enthält die mit der Exponentialfunktion berechneten Werte, die Spalte Nmodel die mit dem realistischeren Modell ermittelten Werte und die Zeile mit t = 0 ist heute. Die Spalte t zählt also die Tage ab heute, d.h. also ab dem 25.03.2020:
 
 
 
