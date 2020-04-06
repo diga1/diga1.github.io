@@ -1,5 +1,3 @@
-# Title
-> summary
 
 
 # Bestimmung der Verdopplungszeit
@@ -12,7 +10,7 @@ Man kann die Verdopplungszeit berechnen, wenn man die Fallzahlen nicht direkt ge
 
 Im nächsten Abschnitt kommen die Ergebnisse für die Verdopplungszeiten, im Abschnitt danach dann der mathematische Zusammenhang, wie man sie bestimmt.
 
-Ich verwende die Daten der Johns Hopkins University, und zwar folgende Datei:
+Ich verwende die Daten der Johns Hopkins University, und zwar folgende Datei (heruntergeladen am 4.4.20, an dem Tag habe ich die Berechnungen durchgeführt):
 
 https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv
 
@@ -21,9 +19,6 @@ https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_c
 
 Hier zunächst die Fallzahlen für Deutschland:
 
-```python
-c1
-```
 
 
 
@@ -34,9 +29,7 @@ c1
 
 Man sieht, dass man nicht viel sieht. Jedenfalls kann man nicht erkennen, wie sich die Verdopplungszeit für die Ausbreitung in Deutschland entwickelt hat. Anders sieht die Sache aus, wenn man die logarithmierten Werte in einer Graphik darstellt:
 
-```python
-c2
-```
+
 
 
 
@@ -47,9 +40,7 @@ c2
 
 Man erkennt hier schon einiges. Das exponentielle Wachstum hat am 25.3.20 begonnen. Danach gibt es verschiedene Abschnitte, in denen der Verlauf wie eine Gerade aussieht. Und zwischen diesen Abschnitten gibt es jeweils einen Knick. Ich habe für jeden dieser Abschnitte eine Gerade berechnet (genau genommen hat das eine Funktion für mich gemacht). Im nächsten Graphen ist die jeweilige Gerade durch die Punkte gezeichnet, aus denen sie berechnet wurde. Aus der Steigung der Geraden erhält man die Verdopplungszeit, die in der Legende angegeben wird.
 
-```python
-lg
-```
+
 
 
 
@@ -66,9 +57,7 @@ Die deutlichen Knickpunkte sind schon auffällig. Wie sieht es also bei unseren 
 
 Hier die logarithmische Kurve für Frankreich:
 
-```python
-fr
-```
+
 
 
 
@@ -81,9 +70,6 @@ Das sieht eher abgerundet aus. Man erkennt keine linearen Abschnitte mit Knickpu
 
 Und jetzt Italien:
 
-```python
-it
-```
 
 
 
@@ -94,9 +80,7 @@ it
 
 Man kann lineare Abschnitte gerade so erkennen. Mit hineingerechneten Geraden sieht es so aus:
 
-```python
-lg
-```
+
 
 
 
@@ -106,10 +90,7 @@ lg
 
 
 Und als letztes Land Spanien:
-
-```python
-sp
-```
+`
 
 
 
@@ -120,9 +101,7 @@ sp
 
 Am oberen Ende lassen sich lineare Bereiche erkennen. Und nun wieder der Graph mit den berechneten Geraden.
 
-```python
-lg
-```
+
 
 
 
